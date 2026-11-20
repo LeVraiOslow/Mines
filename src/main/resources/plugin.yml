@@ -1,0 +1,54 @@
+name: IvalonaMines
+version: '${project.version}'
+main: fr.ivalona.mines.IvalonaMines
+api-version: '26.2'
+description: Mine géante régénérée, pioche évolutive, MineCoins et Cristaux pour Ivalona
+author: Ivalona
+softdepend: [Multiverse-Core, Nexo, PlaceholderAPI, CustomNamePlates, LuckPerms]
+
+commands:
+  ivalonazone:
+    description: Gestion des zones de mine
+    usage: /ivalonazone <pos1|pos2|baguette|create|generate|regen|delete|list|info|intervalle>
+    aliases: [izone]
+    permission: ivalonamines.admin.zone
+  ivalonamines:
+    description: Administration d'IvalonaMines
+    usage: /ivalonamines <reload|give|minecoins|cristaux|niveau|reset|info|setspawn>
+    aliases: [imines]
+    permission: ivalonamines.admin
+  mine:
+    description: Se téléporter à la mine
+    usage: /mine
+    aliases: [mines]
+  boutiquemine:
+    description: Boutique des Cristaux
+    usage: /boutiquemine
+    aliases: [cristaux, boutiquecristaux]
+  minecoins:
+    description: Voir ses MineCoins et Cristaux
+    usage: /minecoins [joueur]
+    aliases: [mc]
+
+permissions:
+  ivalonamines.acces:
+    description: Entrer dans le monde de la mine (/mine, portails, téléportations)
+    default: true
+  ivalonamines.boutique:
+    description: Ouvrir la boutique des Cristaux
+    default: true
+  ivalonamines.minecoins.autres:
+    description: Voir les MineCoins d'un autre joueur
+    default: op
+  ivalonamines.admin:
+    description: Commandes d'administration (/ivalonamines)
+    default: op
+  ivalonamines.admin.zone:
+    description: Gérer les zones (/ivalonazone)
+    default: op
+  ivalonamines.admin.build:
+    description: Casser / poser des blocs hors des zones dans le monde de la mine
+    default: op
+  ivalonamines.bypass.inventaire:
+    description: Ne pas échanger l'inventaire en entrant dans la mine (staff)
+    default: false

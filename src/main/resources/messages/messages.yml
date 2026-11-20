@@ -1,0 +1,106 @@
+# ============================================================================
+#  IvalonaMines - messages
+#  Couleurs : &a &b ... / &#RRGGBB    Vide ("") = message désactivé
+#  {prefix} est remplacé partout par le préfixe ci-dessous.
+# ============================================================================
+
+prefix: "&8[&bMines&8] &r"
+
+# --- accès / monde ---
+acces-refuse: "{prefix}&cTu n'as pas accès à la mine."
+entree: "{prefix}&aBienvenue dans la mine ! &7Ton inventaire est sauvegardé. &eClic droit &7avec ta pioche pour l'améliorer."
+sortie: "{prefix}&7Tu as quitté la mine : ton inventaire a été restauré."
+spawn-non-defini: "{prefix}&cLe spawn de la mine n'est pas défini (/ivalonamines setspawn)."
+teleportation-mine: "{prefix}&7Téléportation vers la mine..."
+chute-vide: "{prefix}&7Tu es tombé dans le vide : retour au spawn de la mine."
+casser-interdit: "{prefix}&cTu ne peux miner que dans la zone de mine."
+poser-interdit: "{prefix}&cTu ne peux pas poser de blocs dans la mine."
+jeter-interdit: "{prefix}&cTu ne peux pas jeter d'objets dans la mine."
+
+# --- minage ---
+barre-action: "&e+{minecoins} MineCoins &8| &7Total : &e{total_minecoins}"
+cristal-gagne: "{prefix}&d+{cristaux} Cristal(aux) ! &7Total : &d{total_cristaux}"
+
+# --- améliorations ---
+amelioration-achetee: "{prefix}&a{amelioration} &7amélioré au niveau &e{niveau}&7 !"
+amelioration-max: "{prefix}&c{amelioration} est déjà au niveau maximum."
+pas-assez-minecoins: "{prefix}&cIl te manque &e{manque} MineCoins&c."
+amelioration-permission: "{prefix}&cTu n'as pas la permission pour ce niveau."
+
+# --- boutique ---
+boutique-interdite: "{prefix}&cLa boutique des Cristaux n'est pas disponible dans la mine."
+pas-assez-cristaux: "{prefix}&cIl te manque &d{manque} Cristaux&c."
+achat-effectue: "{prefix}&aAchat effectué : &f{objet} &7(-{prix} Cristaux)"
+
+# --- solde ---
+solde: "{prefix}&7MineCoins : &e{minecoins} &8| &7Cristaux : &d{cristaux}"
+solde-autre: "{prefix}&f{joueur} &8» &7MineCoins : &e{minecoins} &8| &7Cristaux : &d{cristaux}"
+
+# --- régénération ---
+regen-avertissement: "{prefix}&eLa mine &f{zone} &ese régénère dans &f{minutes} minute(s)&e !"
+regen-debut: "{prefix}&bLa mine &f{zone} &bse régénère !"
+regen-fin: "{prefix}&aLa mine &f{zone} &aest régénérée autour des joueurs."
+
+# --- commandes ---
+joueur-introuvable: "{prefix}&cJoueur introuvable."
+nombre-invalide: "{prefix}&cNombre invalide : &f{valeur}"
+pas-de-permission: "{prefix}&cTu n'as pas la permission."
+joueur-seulement: "{prefix}&cCommande réservée aux joueurs."
+reload: "{prefix}&aConfiguration rechargée."
+fait: "{prefix}&aFait."
+spawn-defini: "{prefix}&aSpawn de la mine défini à ta position."
+pioche-donnee: "{prefix}&aPioche donnée à &f{joueur}&a."
+argent-modifie: "{prefix}&f{joueur} &7: &e{minecoins} MineCoins &8| &d{cristaux} Cristaux"
+niveau-modifie: "{prefix}&f{joueur} &7: &e{amelioration} &7niveau &e{niveau}"
+amelioration-inconnue: "{prefix}&cAmélioration inconnue. Choix : &f{liste}"
+reset-joueur: "{prefix}&aDonnées de mine de &f{joueur} &aremises à zéro."
+info-joueur:
+  - "{prefix}&b{joueur}"
+  - "&7MineCoins : &e{minecoins} &8| &7Cristaux : &d{cristaux}"
+  - "&7Niveaux : &f{niveaux}"
+  - "&7Dans la mine : &f{dans_mine}"
+
+aide-admin:
+  - "&b&lIvalonaMines &7- administration"
+  - "&e/ivalonamines reload &7- recharger la configuration"
+  - "&e/ivalonamines setspawn &7- spawn de la mine (ta position)"
+  - "&e/ivalonamines give <joueur> &7- redonner la pioche"
+  - "&e/ivalonamines minecoins <give|take|set> <joueur> <montant>"
+  - "&e/ivalonamines cristaux <give|take|set> <joueur> <montant>"
+  - "&e/ivalonamines niveau <joueur> <amélioration> <niveau>"
+  - "&e/ivalonamines info <joueur> &7- infos d'un joueur"
+  - "&e/ivalonamines reset <joueur> &7- remise à zéro (MineCoins, Cristaux, niveaux)"
+
+# --- zones ---
+zone-aide:
+  - "&b&lZones de mine"
+  - "&e/ivalonazone baguette &7- item de sélection (clic gauche/droit)"
+  - "&e/ivalonazone pos1|pos2 [x z] &7- coins de la zone (ta position ou coordonnées)"
+  - "&e/ivalonazone create <nom> [yMin yMax] &7- créer la zone (hauteur max du monde par défaut)"
+  - "&e/ivalonazone generate <nom> <60%stone,20%gold_ore,20%grass> &7- blocs + génération"
+  - "&e/ivalonazone regen <nom> &7- régénérer maintenant"
+  - "&e/ivalonazone intervalle <nom> <minutes> &7- intervalle de régénération"
+  - "&e/ivalonazone preremplir <nom> [rayon] &7- générer à l'avance autour de toi (rayon en chunks, 10 par défaut)"
+  - "&e/ivalonazone list | info <nom> | delete <nom>"
+zone-pos: "{prefix}&aPosition {numero} : &f{x}, {z} &7({monde})"
+zone-baguette: "{prefix}&aBaguette donnée : &fclic gauche &7= position 1, &fclic droit &7= position 2."
+zone-selection-incomplete: "{prefix}&cDéfinis d'abord pos1 et pos2 dans le même monde."
+zone-existe: "{prefix}&cLa zone &f{zone} &cexiste déjà."
+zone-introuvable: "{prefix}&cZone introuvable : &f{zone}"
+zone-creee: "{prefix}&aZone &f{zone} &acréée : &f{taille_x} x {taille_z} &7(Y {ymin} → {ymax}). &7Utilise &e/ivalonazone generate {zone} ...&7."
+zone-preremplissage: "{prefix}&aPré-remplissage de &f{zone} &a: {chunks} chunk(s) dans un rayon de {rayon} chunks. &7Suivi : &e/ivalonazone info {zone}"
+zone-pas-dans-monde: "{prefix}&cPlace-toi dans le monde &f{monde} &cpour pré-remplir la zone &f{zone}&c."
+zone-supprimee: "{prefix}&aZone &f{zone} &asupprimée."
+zone-motif-invalide: "{prefix}&cMotif invalide : &f{erreur}"
+zone-motif-normalise: "{prefix}&eLe total fait {total}% : les pourcentages ont été ajustés à 100%."
+zone-generee: "{prefix}&aZone &f{zone} &a: {motif}. &7Génération lancée (les chunks proches des joueurs d'abord)."
+zone-intervalle: "{prefix}&aZone &f{zone} &a: régénération toutes les &f{minutes} minutes&a."
+zone-liste-vide: "{prefix}&7Aucune zone."
+zone-liste: "{prefix}&7Zones : &f{zones}"
+zone-info:
+  - "{prefix}&bZone {zone}"
+  - "&7Monde : &f{monde} &8| &7X {x1} → {x2}, Z {z1} → {z2}, Y {ymin} → {ymax}"
+  - "&7Taille : &f{taille_x} x {taille_z}"
+  - "&7Blocs : &f{motif}"
+  - "&7Régénération : toutes les &f{minutes} min &8| &7prochaine dans &f{prochaine}"
+  - "&7Chunks en attente : &f{attente}"

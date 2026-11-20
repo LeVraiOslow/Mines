@@ -1,0 +1,26 @@
+# ============================================================================
+#  La pioche de la mine
+#  item : matériau (DIAMOND_PICKAXE, NETHERITE_PICKAXE...) ou item Nexo (nexo:pioche_mine)
+#  Placeholders du nom et du lore :
+#    {vitesse} {taille} {profondeur} {recompenses}          -> niveau de chaque amélioration
+#    {vitesse_valeur} {taille_valeur} ...                   -> texte "valeur" du niveau (voir ameliorations.yml)
+#    {minecoins} {cristaux} {joueur}
+# ============================================================================
+
+item: "DIAMOND_PICKAXE"
+name: "&b&lPioche de mineur &7(clic droit)"
+lore:
+  - "&8Pioche évolutive"
+  - ""
+  - "&7Vitesse : &e{vitesse_valeur}"
+  - "&7Taille : &e{taille_valeur}"
+  - "&7Profondeur : &e{profondeur_valeur}"
+  - "&7Récompenses : &e{recompenses_valeur}"
+  - ""
+  - "&e&lClic droit &7→ &fAméliorer"
+# la pioche ne s'use jamais
+unbreakable: true
+glow: false
+# cacher les infos (enchantements, attributs...) dans l'infobulle
+hide-flags: true
+# custom-model-data / modèle Nexo : utilise plutôt un item nexo:xxx

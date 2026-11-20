@@ -1,0 +1,91 @@
+# ============================================================================
+#  IvalonaMines - configuration générale
+#
+#  Dossiers :
+#    config.yml                    -> réglages généraux (ce fichier)
+#    messages/messages.yml         -> tous les messages
+#    pioche/pioche.yml             -> l'item pioche (nom, lore, item Nexo...)
+#    pioche/ameliorations.yml      -> les améliorations (niveaux, coûts, effets)
+#    menus/ameliorations.yml       -> le menu d'amélioration (clic droit avec la pioche)
+#    menus/boutique.yml            -> la boutique des Cristaux (/boutiquemine)
+#    recompenses/blocs.yml         -> MineCoins et Cristaux gagnés par bloc
+#    zones/<nom>.yml               -> les zones (créées par /ivalonazone, ne pas modifier serveur allumé)
+#    data/joueurs/<uuid>.yml       -> données des joueurs (MineCoins, Cristaux, niveaux, inventaire sauvegardé)
+#    logs/<date>.log               -> journaux
+#
+#  Couleurs : &a &b &c &e ... &l &o / &#RRGGBB / <#RRGGBB>
+#  Items : un matériau (DIAMOND_PICKAXE) ou un item Nexo (nexo:monitem)
+#  Sons : "cle.du.son;volume;pitch" (vide = aucun son)
+# ============================================================================
+
+# Monde de la mine (créé avec Multiverse-Core)
+# Conseil : monde vide -> /mv create IvalonaMines normal -g IvalonaMines
+monde: "IvalonaMines"
+
+acces:
+  # permission (LuckPerms) pour entrer dans le monde de la mine
+  permission: "ivalonamines.acces"
+
+inventaire:
+  # en sortant de la mine, tout ce qui reste dans l'inventaire de mine est supprimé
+  # (la pioche n'est jamais perdue : ses niveaux sont enregistrés sur le joueur)
+  vider-a-la-sortie: true
+  # sauvegarder aussi l'expérience (niveaux) avec l'inventaire
+  sauvegarder-experience: true
+  # slot (0-8) où est donnée la pioche
+  slot-pioche: 0
+
+protection:
+  # empêcher de casser / poser des blocs hors des zones (sauf permission ivalonamines.admin.build)
+  casser-hors-zone: false
+  poser-blocs: false
+  # empêcher de jeter des items dans la mine
+  jeter-items: false
+  # garder l'inventaire en cas de mort dans la mine (la pioche reste)
+  garder-inventaire-a-la-mort: true
+  # téléporter au spawn de la mine un joueur qui tombe sous cette hauteur (vide)
+  hauteur-vide: -80
+
+regeneration:
+  # intervalle par défaut des nouvelles zones (minutes)
+  intervalle-minutes: 120
+  # temps de calcul maximum par tick pour poser les blocs (millisecondes). 50 = 1 tick entier.
+  # Plus haut = régénération plus rapide mais plus de lag. 10-20 conseillé.
+  budget-ms-par-tick: 15
+  # téléporter les joueurs présents dans la zone au spawn de la mine au début de la régénération
+  teleporter-joueurs: true
+  # avertissements avant la régénération (minutes)
+  avertissements-minutes: [5, 1]
+  # bloc posé tout en bas de la zone (empêche de tomber dans le vide). Vide = aucun.
+  sol: "BEDROCK"
+
+minage:
+  # nombre maximum de blocs cassés en un coup (sécurité)
+  blocs-max-par-coup: 1500
+  # message dans la barre d'action à chaque bloc cassé
+  barre-action: true
+
+boutique:
+  # mondes où la boutique des Cristaux est interdite (par défaut : la mine elle-même)
+  mondes-interdits: ["IvalonaMines"]
+
+selection:
+  # item de sélection des zones (clic gauche = position 1, clic droit = position 2)
+  baguette: "GOLDEN_AXE"
+
+logs:
+  actif: true
+  # catégories enregistrées dans logs/<date>.log
+  admin: true
+  zones: true
+  achats: true
+  ameliorations: true
+  entrees-sorties: true
+
+sons:
+  amelioration: "entity.player.levelup;1;1.2"
+  erreur: "entity.villager.no;1;1"
+  achat: "entity.experience_orb.pickup;1;1"
+  cristal: "block.amethyst_block.chime;1;1.4"
+  ouverture-menu: "block.chest.open;0.7;1.2"
+  regeneration: "block.beacon.activate;1;1"

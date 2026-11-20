@@ -1,0 +1,49 @@
+# ============================================================================
+#  Récompenses par bloc cassé dans une zone de mine
+#
+#  minecoins : nombre fixe (2) ou plage ("1-3")
+#  cristaux  :
+#    chance  : pourcentage de chance d'obtenir des cristaux (0.5 = 0,5 %)
+#    nombre  : nombre fixe ou plage
+#  Le multiplicateur de l'amélioration "Récompenses" s'applique aux MineCoins et à la chance de cristaux.
+#  "defaut" s'applique aux blocs qui ne sont pas listés.
+# ============================================================================
+
+defaut:
+  minecoins: 1
+  cristaux: {chance: 0.1, nombre: 1}
+
+blocs:
+  STONE:
+    minecoins: 1
+    cristaux: {chance: 0.2, nombre: 1}
+  COBBLESTONE:
+    minecoins: 1
+    cristaux: {chance: 0.2, nombre: 1}
+  GRASS_BLOCK:
+    minecoins: 1
+    cristaux: {chance: 0.1, nombre: 1}
+  COAL_ORE:
+    minecoins: "2-3"
+    cristaux: {chance: 0.5, nombre: 1}
+  IRON_ORE:
+    minecoins: "3-5"
+    cristaux: {chance: 0.8, nombre: 1}
+  GOLD_ORE:
+    minecoins: "5-8"
+    cristaux: {chance: 1.0, nombre: 1}
+  REDSTONE_ORE:
+    minecoins: "4-6"
+    cristaux: {chance: 1.0, nombre: 1}
+  LAPIS_ORE:
+    minecoins: "5-7"
+    cristaux: {chance: 1.2, nombre: 1}
+  DIAMOND_ORE:
+    minecoins: "15-25"
+    cristaux: {chance: 3.0, nombre: "1-2"}
+  EMERALD_ORE:
+    minecoins: "20-30"
+    cristaux: {chance: 4.0, nombre: "1-2"}
+  AMETHYST_BLOCK:
+    minecoins: 10
+    cristaux: {chance: 10.0, nombre: "1-3"}

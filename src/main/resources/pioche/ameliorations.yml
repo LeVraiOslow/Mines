@@ -1,0 +1,64 @@
+# ============================================================================
+#  Améliorations de la pioche (achetées avec les MineCoins)
+#
+#  Pour chaque amélioration :
+#    nom      : nom affiché
+#    niveaux  : niveau -> réglages. Le niveau 1 est le niveau de départ (cout: 0).
+#       cout        : prix en MineCoins pour PASSER à ce niveau
+#       valeur      : texte affiché ({..._valeur}) dans le lore et le menu
+#       permission  : (optionnel) permission LuckPerms requise pour acheter ce niveau
+#
+#  Réglages propres à chaque amélioration :
+#    vitesse     -> efficacite (niveau d'Efficacité sur la pioche), celerite (effet Célérité/Haste, 0 = aucun)
+#    taille      -> largeur, hauteur : zone cassée en face du joueur (1x1, 1x2, 2x2, 3x3...)
+#    profondeur  -> blocs : nombre de blocs cassés en avançant devant le joueur (1 = normal, 10 = tunnel de 10)
+#                   portee : (optionnel) distance à laquelle le joueur peut casser (4.5 = normal, max ~10)
+#    recompenses -> multiplicateur-minecoins, multiplicateur-cristaux (1.0 = normal, 2.0 = double)
+#
+#  Tu peux ajouter autant de niveaux que tu veux (dans l'ordre 1, 2, 3...).
+# ============================================================================
+
+vitesse:
+  nom: "&bVitesse"
+  niveaux:
+    1: {cout: 0,      valeur: "Efficacité I",               efficacite: 1, celerite: 0}
+    2: {cout: 500,    valeur: "Efficacité II",              efficacite: 2, celerite: 0}
+    3: {cout: 1500,   valeur: "Efficacité III",             efficacite: 3, celerite: 0}
+    4: {cout: 4000,   valeur: "Efficacité IV",              efficacite: 4, celerite: 0}
+    5: {cout: 10000,  valeur: "Efficacité V",               efficacite: 5, celerite: 0}
+    6: {cout: 25000,  valeur: "Efficacité V + Célérité I",  efficacite: 5, celerite: 1}
+    7: {cout: 60000,  valeur: "Efficacité V + Célérité II", efficacite: 5, celerite: 2}
+
+taille:
+  nom: "&aTaille"
+  niveaux:
+    1: {cout: 0,       valeur: "1x1", largeur: 1, hauteur: 1}
+    2: {cout: 2000,    valeur: "1x2", largeur: 1, hauteur: 2}
+    3: {cout: 8000,    valeur: "2x2", largeur: 2, hauteur: 2}
+    4: {cout: 25000,   valeur: "3x3", largeur: 3, hauteur: 3}
+    5: {cout: 75000,   valeur: "4x4", largeur: 4, hauteur: 4}
+    6: {cout: 200000,  valeur: "5x5", largeur: 5, hauteur: 5}
+
+profondeur:
+  nom: "&6Profondeur"
+  niveaux:
+    1:  {cout: 0,       valeur: "1 bloc",   blocs: 1,  portee: 4.5}
+    2:  {cout: 1500,    valeur: "2 blocs",  blocs: 2,  portee: 5}
+    3:  {cout: 4000,    valeur: "3 blocs",  blocs: 3,  portee: 5.5}
+    4:  {cout: 9000,    valeur: "4 blocs",  blocs: 4,  portee: 6}
+    5:  {cout: 18000,   valeur: "5 blocs",  blocs: 5,  portee: 6.5}
+    6:  {cout: 35000,   valeur: "6 blocs",  blocs: 6,  portee: 7}
+    7:  {cout: 60000,   valeur: "7 blocs",  blocs: 7,  portee: 8}
+    8:  {cout: 100000,  valeur: "8 blocs",  blocs: 8,  portee: 8.5}
+    9:  {cout: 160000,  valeur: "9 blocs",  blocs: 9,  portee: 9}
+    10: {cout: 250000,  valeur: "10 blocs", blocs: 10, portee: 10}
+
+recompenses:
+  nom: "&dRécompenses"
+  niveaux:
+    1: {cout: 0,       valeur: "x1",   multiplicateur-minecoins: 1.0,  multiplicateur-cristaux: 1.0}
+    2: {cout: 3000,    valeur: "x1.25", multiplicateur-minecoins: 1.25, multiplicateur-cristaux: 1.1}
+    3: {cout: 10000,   valeur: "x1.5", multiplicateur-minecoins: 1.5,  multiplicateur-cristaux: 1.25}
+    4: {cout: 30000,   valeur: "x2",   multiplicateur-minecoins: 2.0,  multiplicateur-cristaux: 1.5}
+    5: {cout: 90000,   valeur: "x2.5", multiplicateur-minecoins: 2.5,  multiplicateur-cristaux: 1.75}
+    6: {cout: 250000,  valeur: "x3",   multiplicateur-minecoins: 3.0,  multiplicateur-cristaux: 2.0}

@@ -1,0 +1,91 @@
+# ============================================================================
+#  Menu d'amélioration de la pioche (clic droit avec la pioche)
+#
+#  title / size (9 à 54) / filler (item qui remplit les cases vides, supprime la section pour aucun)
+#  Chaque item : slot (ou slots: [0, 1, "3-5"]), item (matériau ou nexo:xxx), amount, name, lore,
+#                glow, hide-flags, action (CLOSE | NONE), commands ("[console] ..." / "[player] ...")
+#
+#  "ameliorations" : un item par amélioration (clé = vitesse / taille / profondeur / recompenses)
+#     Clic gauche = acheter le niveau suivant.
+#     Placeholders : {nom} {niveau} {niveau_max} {valeur} {valeur_suivante} {cout} {manque} {statut}
+#  Placeholders partout : {minecoins} {cristaux} {joueur}
+#  Le titre accepte les glyphs Nexo, ex : "<shift:-8><glyph:menu_pioche>"
+# ============================================================================
+
+title: "&8» &b&lAmélioration de la pioche"
+size: 27
+
+filler:
+  item: GRAY_STAINED_GLASS_PANE
+  name: " "
+
+# Ligne {statut} selon la situation
+statuts:
+  achetable: "&a&lClic gauche &7→ &aAméliorer"
+  trop-cher: "&cIl te manque &e{manque} MineCoins"
+  max: "&6&lNiveau maximum atteint"
+  permission: "&cNiveau verrouillé"
+
+ameliorations:
+  vitesse:
+    slot: 10
+    item: SUGAR
+    name: "{nom} &7(niveau {niveau}/{niveau_max})"
+    lore:
+      - "&7Mine plus vite."
+      - ""
+      - "&7Actuel : &e{valeur}"
+      - "&7Suivant : &a{valeur_suivante}"
+      - "&7Prix : &e{cout} MineCoins"
+      - ""
+      - "{statut}"
+  taille:
+    slot: 12
+    item: TNT
+    name: "{nom} &7(niveau {niveau}/{niveau_max})"
+    lore:
+      - "&7Casse plusieurs blocs d'un coup."
+      - ""
+      - "&7Actuel : &e{valeur}"
+      - "&7Suivant : &a{valeur_suivante}"
+      - "&7Prix : &e{cout} MineCoins"
+      - ""
+      - "{statut}"
+  profondeur:
+    slot: 14
+    item: SPYGLASS
+    name: "{nom} &7(niveau {niveau}/{niveau_max})"
+    lore:
+      - "&7Creuse plus loin devant toi."
+      - ""
+      - "&7Actuel : &e{valeur}"
+      - "&7Suivant : &a{valeur_suivante}"
+      - "&7Prix : &e{cout} MineCoins"
+      - ""
+      - "{statut}"
+  recompenses:
+    slot: 16
+    item: AMETHYST_SHARD
+    name: "{nom} &7(niveau {niveau}/{niveau_max})"
+    lore:
+      - "&7Plus de MineCoins et de Cristaux."
+      - ""
+      - "&7Actuel : &e{valeur}"
+      - "&7Suivant : &a{valeur_suivante}"
+      - "&7Prix : &e{cout} MineCoins"
+      - ""
+      - "{statut}"
+
+items:
+  solde:
+    slot: 4
+    item: SUNFLOWER
+    name: "&e&lTon solde"
+    lore:
+      - "&7MineCoins : &e{minecoins}"
+      - "&7Cristaux : &d{cristaux}"
+  fermer:
+    slot: 22
+    item: BARRIER
+    name: "&cFermer"
+    action: CLOSE

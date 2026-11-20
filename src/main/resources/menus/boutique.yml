@@ -1,0 +1,98 @@
+# ============================================================================
+#  Boutique des Cristaux (/boutiquemine) - utilisable hors de la mine (voir config.yml -> boutique)
+#
+#  "offres" : chaque offre
+#     slot, item, amount, name, lore, glow   (comme les autres menus)
+#     prix       : prix en Cristaux
+#     objet      : nom de l'offre (messages et logs)
+#     commandes  : commandes console exécutées à l'achat ({joueur} = pseudo)
+#     permission : (optionnel) permission requise pour acheter
+#     Placeholders : {prix} {manque} {statut} {objet}
+#  "items" : décoration / infos / fermer (action: CLOSE)
+#  Placeholders partout : {minecoins} {cristaux} {joueur}
+# ============================================================================
+
+title: "&8» &d&lBoutique des Cristaux"
+size: 36
+
+filler:
+  item: PURPLE_STAINED_GLASS_PANE
+  name: " "
+
+statuts:
+  achetable: "&a&lClic gauche &7→ &aAcheter"
+  trop-cher: "&cIl te manque &d{manque} Cristaux"
+  permission: "&cOffre verrouillée"
+
+offres:
+  cle_vote:
+    slot: 10
+    item: TRIPWIRE_HOOK
+    name: "&e&lClé de vote"
+    objet: "1 clé de vote"
+    prix: 25
+    lore:
+      - "&7Une clé pour la caisse de vote."
+      - ""
+      - "&7Prix : &d{prix} Cristaux"
+      - ""
+      - "{statut}"
+    commandes:
+      - "crates givekey {joueur} cle_vote 1"
+  argent:
+    slot: 12
+    item: GOLD_INGOT
+    name: "&6&l50.000 $"
+    objet: "50.000 $"
+    prix: 40
+    lore:
+      - "&7De l'argent pour ton île."
+      - ""
+      - "&7Prix : &d{prix} Cristaux"
+      - ""
+      - "{statut}"
+    commandes:
+      - "eco give {joueur} 50000"
+  fly:
+    slot: 14
+    item: FEATHER
+    name: "&b&lFly 30 minutes"
+    objet: "30 minutes de fly"
+    prix: 60
+    lore:
+      - "&730 minutes de vol."
+      - ""
+      - "&7Prix : &d{prix} Cristaux"
+      - ""
+      - "{statut}"
+    commandes:
+      - "flyplume addtime {joueur} 30m"
+  cle_mythique:
+    slot: 16
+    item: NETHER_STAR
+    name: "&5&lClé mythique"
+    objet: "1 clé mythique"
+    prix: 200
+    glow: true
+    lore:
+      - "&7La clé la plus rare."
+      - ""
+      - "&7Prix : &d{prix} Cristaux"
+      - ""
+      - "{statut}"
+    commandes:
+      - "crates givekey {joueur} mythique_key 1"
+
+items:
+  solde:
+    slot: 4
+    item: AMETHYST_CLUSTER
+    name: "&d&lTes Cristaux"
+    lore:
+      - "&7Cristaux : &d{cristaux}"
+      - "&7Gagne-en en minant dans la mine !"
+  fermer:
+    slot: 31
+    item: BARRIER
+    name: "&cFermer"
+    action: CLOSE
